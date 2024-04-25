@@ -1,0 +1,7 @@
+import csv
+
+with open('name.csv',mode='w')as csvfile:
+	fieldnames=['firstname','lastname']
+	writer= csv.DictWriter(csvfile,fieldnames-fieldnames)	
+	writer.writeheader()
+	writer.writerow({"firstname":"baked","lastname":"stew"})
