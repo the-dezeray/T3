@@ -17,13 +17,14 @@ def update_csv( data):
 
 
 
-def read_csv(filename):
-    data = []
-    with open(filename, mode='r', newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            data.append(row)
-    return data
+def read_csv():
+	filename = "name.csv"
+	data = []
+	with open(filename, mode='r', newline='') as csvfile:
+	    reader = csv.DictReader(csvfile)
+	    for row in reader:
+	        data.append(row)
+	return data
 
 # Example usage
 
