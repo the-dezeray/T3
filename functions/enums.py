@@ -8,6 +8,8 @@ class Operation(Enum):
     SET = 3
     NONE = 0
     VIEW = 4
+    REMOVE = -1
+    
 
 
 class Types(Enum):

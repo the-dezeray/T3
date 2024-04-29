@@ -1,11 +1,13 @@
 from functions.enums import Operation, Types
 
 
-def remove_text(text, text_to_remove):
+def remove_text(text: str, text_to_remove: str) -> str:
+
     index = text.find(text_to_remove)
-    if index != -1:
-        text = text[:index] + text[index + len(text_to_remove) :]
-        return text
+    if index!= -1:
+        text = text[:index] + text[index + len(text_to_remove):]
+        print(f"functions worked result: {text}")
+    return text
 
 
 def gen():
@@ -25,10 +27,12 @@ def add_task(input_object):
 
     timestamp = gen()
     b = "dadafs fadfa task a"
-    value = remove_text(b, "task")
-    value = remove_text(value, "a")
+    print(f"the value of the input_object.string is {input_object.string}")
+    value = remove_text(input_object.string,"task")
+    value = remove_text(value, "add")
+    value = value.strip()
     _type = input_object.type
-    _dict = {"timestamp": timestamp, "type": _type, "value": "task"}
+    _dict = {"timestamp": timestamp, "type": _type, "value": value}
     update_csv(_dict)
     print("Hello World")
 
