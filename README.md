@@ -1,2 +1,2 @@
-# cli-to-do
+# TerminalTaskTracker
 to do command line tinerface 
