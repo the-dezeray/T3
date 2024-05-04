@@ -13,10 +13,16 @@ def find_in_map(user_input: str, MAP):
             
             return MAP[word.lower()]
     return None
+def remove_text(text: str, text_to_remove: str) -> str:
 
+    index = text.find(text_to_remove)
+    if index!= -1:
+        text = text[:index] + text[index + len(text_to_remove):]
+        print(f"functions worked result: {text}")
+    return text
 
 @dataclass
-class UserInput:
+class InputParser():
     
 
     operation: Operation = Operation.NONE
@@ -25,6 +31,7 @@ class UserInput:
     value: str = None
     arguments: Arguments = Arguments.NONE
     timestamp: float = 0.0
+    time: float = 0.0
 
     def get_operation(self):
 
@@ -44,8 +51,20 @@ class UserInput:
     def generate_timestamp(self):
         return 0
 
-    def get_value(self):
+    def get_value(self)->str:
         return self.string
+    
+    def get_time(self)->float:
+    
+        input_string = self.string
+        # Updated regular expression pattern to match both HH:MM and HHMM formats
+        time_pattern = r"\b([01]?[0-9]|2[0-3])(?::[0-5][0-9])?\b"
+        match = re.search(time_pattern, input_string)
+        if match:
+            return match.start(), match.end()
+        else:
+            return 0.00
+
     def __post_init__(self):
         self.operation = find_in_map(self.string, OPERATION_MAPPINGS)
         self.type = find_in_map(self.string, Types)
@@ -53,3 +72,4 @@ class UserInput:
         self.index = self.get_index()
         self.timestamp = self.generate_timestamp()
         self.value = self.get_value()
+        self.time = self.get_time()

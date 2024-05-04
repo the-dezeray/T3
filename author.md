@@ -1,4 +1,4 @@
-# autheors
+# authors
 desiree chingwawru
 </br>
 lethabo 

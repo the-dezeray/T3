@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from functions.enums import Operation , Types
 @dataclass
-class Handler:
+class CommandHandler:
 
 
     def add(self,input_object):
@@ -16,8 +16,21 @@ class Handler:
         update_csv(_entry)
     def update(self,input_object):
         return 0   
+    
     def view(self,input_object):
-        return 0
+        type = input_object.type
+        from functions.file_reader_and_writer import read_csv
+
+        data_file = read_csv()
+        task_rows = []
+        for data_dict in data_file:
+            if eval(data_dict.get("type")) == type:
+                task_rows.append(data_dict)
+
+        for c in task_rows:
+            print(str(c["value"]))
+        return task_rows
+    
     def remove(self,input_object):
         from functions.file_reader_and_writer import read_csv, new_csv
 
