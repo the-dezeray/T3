@@ -10,7 +10,7 @@ def update_csv(data):
 
 
     file_name =file_name.replace("\\","\\\\")
-    fieldnames = ["timestamp", "type", "value","time"]
+    fieldnames = list(data.keys())
     # Open the CSV file in append mode
     with open(file_name, mode="a", newline="") as csvfile:
         # Create a DictWriter object
