@@ -1,0 +1,49 @@
+{
+    "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+    ],
+    "months": [
+        "januanry",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
+    ],
+    "note_types": [
+        "task",
+        "entry",
+        "journal",
+        "project",
+        "sprint",
+        "bank",
+        "alarm"
+    ],
+    "suggestions": {
+        "add": "function: [grey]ADD[grey]\nThis function is used to add notes of various types, such as alarms, sprints, projects, tasks, and entries.",
+        "delete": "function: [grey]DELETE[grey]\nThis function is used to delete notes. It supports deleting a variety of note types.",
+        "timetable": "function: [grey]TIMETABLE[grey]\nThis function displays a timetable, organizing tasks by time slots for easy viewing.",
+        "modify": "function: [grey]MODIFY[grey]\nThis function is used to modify existing notes, allowing changes to be made to any note type.",
+        "show": "function: [grey]SHOW[grey]\nThis function shows all entries. It can be configured to filter by note type, date, or other parameters.",
+        "config": "function: [grey]CONFIG[grey]\nThis function is used to configure the task tracker, allowing you to set preferences, adjust settings, and customize the behavior of other functions.",
+        "task": "targets notes or is  related to operations which deal with notes"
+    },
+    "settings":{
+        "refresh_per_second": 10,
+        "color-theme": 0,
+        "user-name":null,
+        "user-email":null
+    }
+}
